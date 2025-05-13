@@ -1,0 +1,33 @@
+S3 Bucket : bedrock-chat-with-your-pdf 
+
+
+Run this in the CMD prompt with the location of admin or the client side 
+ADMIN
+docker run -e BUCKET_NAME=bedrock-chat-PDF  -v ~/.aws:/root/.aws -p 8083:8083 -it pdf-reader-admin
+
+
+docker run -p 8083:8083 -it pdf-reader-admin
+
+
+docker build -t pdf-reader-admin .
+
+
+CMD prompt 
+docker run -e BUCKET_NAME=bedrock-chat-with-your-pdf ^
+  -v %USERPROFILE%\.aws:/root/.aws ^
+  -p 8083:8083 ^
+  -it pdf-reader-admin
+
+
+
+
+
+USER 
+docker build -t pdf-reader-client . 
+
+docker run -e BUCKET_NAME=bedrock-chat-with-your-pdf ^
+  -v %USERPROFILE%\.aws:/root/.aws ^
+  -p 8083:8083 ^
+  -it pdf-reader-client
+
+
